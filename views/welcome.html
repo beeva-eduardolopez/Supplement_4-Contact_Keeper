@@ -1,28 +1,45 @@
-<h1>Welcome Page</h1>
+<header>
+    <div id="block">
+        <div style="padding: 10px;">
+            <h2>Welcome Page</h2>
+            by     <span>Eduardo Lopez Anta</span></span>
+        </div>
+    </div>
+</header>
 
 <h3>Add new contact</h3>
 
-<form class="contactForm" name="newContactData">
-    Name:
-    <input type="text" id="name" placeHolder="Name...." ng-model="name"></input>
-    <br>
-    <br> Email:
-    <input type="text" id="email" placeHolder="Email...." ng-model="email"></input>
-    <br>
-    <br> Phone Number:
-    <input type="number" id="phoneNumber" placeHolder="Phone number...." ng-model="phoneNumber"></input>
-    <br/>
-    <br/>
-    <input class="btn btn-primary" type="submit" value="Add Contact" ng-click="addContact();">
-</form>
+<div class="center">
+    <form class="fill" name="newContactData">
+        Name:
+        <br/>
+        <input class="input-normal" id="name" type="text" ng-model="name">
+        <br/>
+        <br/> Email:
+        <br/>
+        <input class="input-normal" id="email" type="text" ng-model="email">
+        <br/>
+        <br/> Phone Number:
+        <br/>
+        <input class="input-normal" id="phoneNumber" type="number" ng-model="phoneNumber">
+        <br/>
+        <br/>
+        <input class="btn btn-primary" type="submit" value="Add Contact" ng-click="addContact();">
+    </form>
+</div>
 
 <h3>List of contacts</h3>
 
-<div class="contacts">
-    <div id="contacts" class="contact" ng-repeat="contact in contacts">
-        <p>Name: {{contact.name}}</p>
-        <p>Email: {{contact.email}}</p>
-        <p>Phone Number: {{contact.phoneNumber}}</p>
-        <a href="#contacts/{{$index}}">Contact Detail</a>
+<div class="center">
+    <div id="contacts" ng-repeat="contact in contacts">
+        <div id="block">
+            <div style="padding: 10px;">
+                <div><span class="list-post">Name: </span> {{contact.name}}</div>
+                <div><span class="list-post">Email: </span> {{contact.email}}</div>
+                <div><span class="list-post">Phone Number: </span> {{contact.phoneNumber}}</div>
+                <br>
+               <a href="#contacts/{{$index}}">Contact Detail</a>
+            </div>
+        </div>
     </div>
 </div>
